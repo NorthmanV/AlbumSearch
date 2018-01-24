@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainVC.swift
 //  AlbumSearch
 //
 //  Created by Руслан Акберов on 23.01.2018.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        DataService.instance.sendAlbumsRequest(searchRequest: "The Book Of Souls")
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    
 
 }
 
