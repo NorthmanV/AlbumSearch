@@ -16,11 +16,15 @@ class AlbumCell: UICollectionViewCell {
     
     func updateCell (album: Album) {
         let imageUrl = URL(string: album.artworkUrl100)
-        if let imageData = try? Data(contentsOf: imageUrl!) {
-            DispatchQueue.main.async {
-                self.albumImage.image = UIImage(data: imageData)
+        
+        DispatchQueue.global().async {
+            if let imageData = try? Data(contentsOf: imageUrl!) {
+                DispatchQueue.main.async {
+                    self.albumImage.image = UIImage(data: imageData)
+                }
             }
         }
+        
         albumTitleLabel.text = album.collectionName
         albumArtistLabel.text = album.artistName
     }
