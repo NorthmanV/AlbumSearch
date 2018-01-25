@@ -14,28 +14,38 @@ class DataService {
     
     static let instance = DataService()
     
-    func sendAlbumsRequest (searchRequest: String, arrayWithAlbums: [Album]? = nil) {
+    func getAlbums (searchRequest: String, complition: @escaping ([Album])->()) {
+        var albums = [Album]()
         let searchString = searchRequest.replacingOccurrences(of: " ", with: "+")
         let url = URL(string: "\(BASE_URL)\(searchString)")
         let session = URLSession.shared
         session.dataTask(with: url!) { (data, response, error) in
             if let response = response {
-                print(response)
+                //print(response)
             }
             if let data = data {
-                print(data)
+                //print(data)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    print(json)
+                    //print(json)
                     
                     if let albumsResults = json["results"] as? NSArray {
                         for album in albumsResults {
-//                            let album = Album(title: albumsResults[1], artist: "", country: "", artworkUrl: "", genre: "", releaseDate: "")
-
+                            if let albumInfo = album as? [String: AnyObject] {
+                                guard let artistName = albumInfo["artistName"] as? String else {return}
+                                guard let artworkUrl100 = albumInfo["artworkUrl100"] as? String else {return}
+                                guard let collectionId = albumInfo["collectionId"] as? Int else {return}
+                                guard let collectionName = albumInfo["collectionName"] as? String else {return}
+                                guard let country = albumInfo["country"] as? String else {return}
+                                guard let primaryGenreName = albumInfo["primaryGenreName"] as? String else {return}
+                                guard let releaseDate = albumInfo["releaseDate"] as? String else {return}
+                                let albumInstance = Album(artistName: artistName, artworkUrl100: artworkUrl100, collectionId: collectionId, collectionName: collectionName, country: country, primaryGenreName: primaryGenreName, releaseDate: releaseDate)
+                                albums.append(albumInstance)
+                            }
                         }
+                        complition(albums)
                     }
-                    
-                    
+
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -44,10 +54,13 @@ class DataService {
                 print(error!.localizedDescription)
             }
         }.resume()
-        
     }
     
-    
 }
+//                            print(type(of: album))
+//                            let album = Album(title: albumsResults[1], artist: "", country: "", artworkUrl: "", genre: "", releaseDate: "")
+// save only artwork image, title, artist - make them optional to initialize instanse of album before
+
+
 
 

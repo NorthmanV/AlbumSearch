@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87A4817A201A5EE2006AF8BD /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A48179201A5EE2006AF8BD /* AlbumCell.swift */; };
 		87D41E272017B8AD0048A141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D41E262017B8AD0048A141 /* AppDelegate.swift */; };
 		87D41E292017B8AD0048A141 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D41E282017B8AD0048A141 /* MainVC.swift */; };
 		87D41E2C2017B8AD0048A141 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87D41E2A2017B8AD0048A141 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		87A48179201A5EE2006AF8BD /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		87D41E232017B8AD0048A141 /* AlbumSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D41E262017B8AD0048A141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87D41E282017B8AD0048A141 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87A48178201A5E7E006AF8BD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87A48179201A5EE2006AF8BD /* AlbumCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		87D41E1A2017B8AD0048A141 = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				87D41E262017B8AD0048A141 /* AppDelegate.swift */,
-				87D41E3B2017CE6B0048A141 /* Model */,
-				87D41E3A2017CE590048A141 /* Controller */,
 				87D41E382017BA7D0048A141 /* DataService.swift */,
+				87D41E3B2017CE6B0048A141 /* Model */,
+				87A48178201A5E7E006AF8BD /* View */,
+				87D41E3A2017CE590048A141 /* Controller */,
 				87D41E2A2017B8AD0048A141 /* Main.storyboard */,
 				87D41E2D2017B8AD0048A141 /* Assets.xcassets */,
 				87D41E2F2017B8AD0048A141 /* LaunchScreen.storyboard */,
@@ -160,6 +171,7 @@
 			files = (
 				87D41E292017B8AD0048A141 /* MainVC.swift in Sources */,
 				87D41E392017BA7D0048A141 /* DataService.swift in Sources */,
+				87A4817A201A5EE2006AF8BD /* AlbumCell.swift in Sources */,
 				87D41E272017B8AD0048A141 /* AppDelegate.swift in Sources */,
 				87D41E3D2017CE7F0048A141 /* Album.swift in Sources */,
 			);
