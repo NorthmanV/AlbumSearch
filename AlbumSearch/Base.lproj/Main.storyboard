@@ -24,10 +24,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Type album title" translatesAutoresizingMaskIntoConstraints="NO" id="LHS-fT-LIL">
-                                <rect key="frame" x="0.0" y="116" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d9A-om-a6t">
                                 <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -90,23 +86,31 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Type album title " translatesAutoresizingMaskIntoConstraints="NO" id="SL3-Gb-FWt">
+                                <rect key="frame" x="0.0" y="116" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d9A-om-a6t" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0kT-HN-ZTL"/>
                             <constraint firstItem="d9A-om-a6t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8Fc-Ku-EkG"/>
-                            <constraint firstItem="LHS-fT-LIL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8ol-WI-CxY"/>
                             <constraint firstItem="d9A-om-a6t" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="GcH-hC-1SD"/>
-                            <constraint firstItem="LHS-fT-LIL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d1H-qd-JlF"/>
-                            <constraint firstItem="LHS-fT-LIL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dyl-zy-Sux"/>
-                            <constraint firstItem="d9A-om-a6t" firstAttribute="top" secondItem="LHS-fT-LIL" secondAttribute="bottom" id="jjf-V7-fHl"/>
+                            <constraint firstItem="SL3-Gb-FWt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Oge-NC-6ha"/>
+                            <constraint firstItem="SL3-Gb-FWt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d9o-bS-sEi"/>
+                            <constraint firstItem="SL3-Gb-FWt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ntc-au-1T9"/>
+                            <constraint firstItem="d9A-om-a6t" firstAttribute="top" secondItem="SL3-Gb-FWt" secondAttribute="bottom" id="zFh-MJ-MSb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Album Search" largeTitleDisplayMode="always" id="RsI-tD-pgm"/>
+                    <navigationItem key="navigationItem" title="Album Search" id="RsI-tD-pgm"/>
                     <connections>
                         <outlet property="collectionView" destination="d9A-om-a6t" id="V0P-K0-UEW"/>
-                        <outlet property="searchBar" destination="LHS-fT-LIL" id="yum-Rw-KSK"/>
+                        <outlet property="searchBar" destination="SL3-Gb-FWt" id="aws-Jh-5VP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -122,6 +126,9 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.21677863967939426" green="0.6151112427839156" blue="0.60300692034782089" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

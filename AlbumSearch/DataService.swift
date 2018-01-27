@@ -8,11 +8,12 @@
 
 import Foundation
 
-let BASE_URL = "https://itunes.apple.com/search?entity=album&attribute=albumTerm&limit=200&term="
+let BASE_URL = "https://itunes.apple.com/search?entity=album&attribute=albumTerm&offset=0&limit=100&term="
 
 class DataService {
     
     static let instance = DataService()
+    
     
     func getAlbums (searchRequest: String, complition: @escaping ([Album])->()) {
         var albums = [Album]()
@@ -20,15 +21,14 @@ class DataService {
         let url = URL(string: "\(BASE_URL)\(searchString)")
         let session = URLSession.shared
         session.dataTask(with: url!) { (data, response, error) in
-            if let response = response {
-                //print(response)
-            }
+//            if let response = response {
+//                print(response)
+//            }
             if let data = data {
                 //print(data)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                     //print(json)
-                    
                     if let albumsResults = json["results"] as? NSArray {
                         for album in albumsResults {
                             if let albumInfo = album as? [String: AnyObject] {
@@ -45,7 +45,6 @@ class DataService {
                         }
                         complition(albums)
                     }
-
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -57,9 +56,7 @@ class DataService {
     }
     
 }
-//                            print(type(of: album))
-//                            let album = Album(title: albumsResults[1], artist: "", country: "", artworkUrl: "", genre: "", releaseDate: "")
-// save only artwork image, title, artist - make them optional to initialize instanse of album before
+
 
 
 

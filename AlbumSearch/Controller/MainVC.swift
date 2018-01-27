@@ -20,14 +20,11 @@ class MainVC: UIViewController {
         searchBar.delegate = self
         collectionView.delegate = self
         collectionView.dataSource = self
-        DataService.instance.getAlbums(searchRequest: "Master") { (requestedAlbums) in
-            self.albums = requestedAlbums
-            print(self.albums.count)
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
+        let indentation = (self.view.bounds.size.width - 300) / 4
+        collectionView.contentInset = UIEdgeInsets(top: indentation, left: indentation, bottom: indentation, right: indentation)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
+    
 }
 
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -41,11 +38,33 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             cell.updateCell(album: albums[indexPath.row])
             return cell
         }
-        
         return UICollectionViewCell()
     }
 }
 
 extension MainVC: UISearchBarDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text != nil || searchBar.text != "" {
+            DataService.instance.getAlbums(searchRequest: searchBar.text!) { (requestedAlbums) in
+                self.albums = requestedAlbums.sorted(by: {$0.collectionName < $1.collectionName})
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        searchBar.resignFirstResponder()
+    }
+    
+ 
+    
+    
 }
+
+
+
+
+
+
+
+
