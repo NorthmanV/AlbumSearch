@@ -33,6 +33,11 @@ class MainVC: UIViewController {
             if let destinationVC = segue.destination as? AlbumDetailVC {
                 if let album = sender as? Album {
                     destinationVC.album = album
+                    let index = albums.index(where: {$0 === album})
+                    let indexPath = IndexPath(row: index!, section: 0)
+                    if let cell = collectionView.cellForItem(at: indexPath) as? AlbumCell {
+                        destinationVC.image = cell.albumImage.image
+                    }
                 }
             }
         }

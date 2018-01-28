@@ -19,8 +19,8 @@ class AlbumDetailVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var album: Album!
-    var tracks = [Track]()
     var image: UIImage!
+    var tracks = [Track]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +50,7 @@ class AlbumDetailVC: UIViewController {
         yearLabel.text = album.releaseDate
         albumImage.image = image
     }
+    
 }
 
 extension AlbumDetailVC: UITableViewDelegate, UITableViewDataSource {
