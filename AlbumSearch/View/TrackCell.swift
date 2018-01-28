@@ -18,5 +18,4 @@ class TrackCell: UITableViewCell {
         trackName.text = track.trackName
     }
     
-
 }

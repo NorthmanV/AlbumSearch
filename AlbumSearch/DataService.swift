@@ -21,14 +21,9 @@ class DataService {
         let url = URL(string: "\(BASE_URL)\(searchString)")
         let session = URLSession.shared
         session.dataTask(with: url!) { (data, response, error) in
-//            if let response = response {
-//                print(response)
-//            }
             if let data = data {
-                //print(data)
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    //print(json)
                     if let albumsResults = json["results"] as? NSArray {
                         for album in albumsResults {
                             if let albumInfo = album as? [String: AnyObject] {
@@ -55,7 +50,6 @@ class DataService {
             }
         }.resume()
     }
-    
     
     func getAlbumTracks (collectionId: Int, complition: @escaping ([Track]) -> ()) {
         var tracks = [Track]()

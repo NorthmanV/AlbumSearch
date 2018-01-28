@@ -25,7 +25,7 @@ class MainVC: UIViewController {
         }
         let indentation = (self.view.bounds.size.width - 300) / 4
         collectionView.contentInset = UIEdgeInsets(top: indentation, left: indentation, bottom: indentation, right: indentation)
-//        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        addShadowToNavigationBar()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,7 +43,17 @@ class MainVC: UIViewController {
         }
     }
     
+    func addShadowToNavigationBar() {
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 2
+    }
+    
 }
+
+// MARK: - CollectionView methods
 
 extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -62,9 +72,12 @@ extension MainVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let album = albums[indexPath.row]
         performSegue(withIdentifier: "AlbumDetailVC", sender: album)
+        searchBar.resignFirstResponder()
     }
 
 }
+
+// MARK: - SearchBar methods
 
 extension MainVC: UISearchBarDelegate {
     

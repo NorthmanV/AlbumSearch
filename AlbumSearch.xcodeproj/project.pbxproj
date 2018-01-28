@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		87166136201D0D4A00C112D3 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87166135201D0D4A00C112D3 /* TrackCell.swift */; };
+		87166138201DE79900C112D3 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87166137201DE79900C112D3 /* RoundedImageView.swift */; };
 		87A4817A201A5EE2006AF8BD /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A48179201A5EE2006AF8BD /* AlbumCell.swift */; };
 		87C27321201CDEF700C42E63 /* AlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C27320201CDEF700C42E63 /* AlbumDetailVC.swift */; };
 		87C27323201CF9E400C42E63 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C27322201CF9E400C42E63 /* Track.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		87166135201D0D4A00C112D3 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		87166137201DE79900C112D3 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		87A48179201A5EE2006AF8BD /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		87C27320201CDEF700C42E63 /* AlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailVC.swift; sourceTree = "<group>"; };
 		87C27322201CF9E400C42E63 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			children = (
 				87A48179201A5EE2006AF8BD /* AlbumCell.swift */,
 				87166135201D0D4A00C112D3 /* TrackCell.swift */,
+				87166137201DE79900C112D3 /* RoundedImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				87C27323201CF9E400C42E63 /* Track.swift in Sources */,
 				87166136201D0D4A00C112D3 /* TrackCell.swift in Sources */,
 				87D41E292017B8AD0048A141 /* MainVC.swift in Sources */,
+				87166138201DE79900C112D3 /* RoundedImageView.swift in Sources */,
 				87C27321201CDEF700C42E63 /* AlbumDetailVC.swift in Sources */,
 				87D41E392017BA7D0048A141 /* DataService.swift in Sources */,
 				87A4817A201A5EE2006AF8BD /* AlbumCell.swift in Sources */,

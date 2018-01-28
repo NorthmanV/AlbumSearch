@@ -42,12 +42,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="134"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqc-GG-0oF">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqc-GG-0oF" customClass="RoundedImageView" customModule="AlbumSearch" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="3mM-9N-whp"/>
                                                         <constraint firstAttribute="height" constant="100" id="ZZA-iO-PWI"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iron Maiden" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBy-nl-IYE">
                                                     <rect key="frame" x="0.0" y="118" width="100" height="14"/>
@@ -132,12 +137,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xy6-KC-Dgj">
                                 <rect key="frame" x="16" y="84" width="343" height="120"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIt-54-E2d">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BIt-54-E2d" customClass="RoundedImageView" customModule="AlbumSearch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Clo-FP-ubG"/>
                                             <constraint firstAttribute="width" constant="120" id="Tvc-Ga-eYq"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="wjd-sJ-l6j">
                                         <rect key="frame" x="136" y="0.0" width="207" height="120"/>
@@ -248,7 +258,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3n-tn-ZPa">
-                                                    <rect key="frame" x="16" y="11.5" width="20" height="20.5"/>
+                                                    <rect key="frame" x="20" y="11.5" width="20" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="QBP-O5-0vo"/>
                                                     </constraints>
@@ -257,14 +267,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="If Eternity Should Fail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Zps-OJ-X9l">
-                                                    <rect key="frame" x="41" y="12" width="318" height="20.5"/>
+                                                    <rect key="frame" x="45" y="12" width="314" height="20.5"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="E3n-tn-ZPa" firstAttribute="leading" secondItem="IVH-Li-lHr" secondAttribute="leading" constant="16" id="9mC-Dp-M9m"/>
+                                                <constraint firstItem="E3n-tn-ZPa" firstAttribute="leading" secondItem="IVH-Li-lHr" secondAttribute="leading" constant="20" id="9mC-Dp-M9m"/>
                                                 <constraint firstItem="Zps-OJ-X9l" firstAttribute="leading" secondItem="E3n-tn-ZPa" secondAttribute="trailing" constant="5" id="JIn-f7-Mgr"/>
                                                 <constraint firstAttribute="trailing" secondItem="Zps-OJ-X9l" secondAttribute="trailing" constant="16" id="Mhw-AX-7wM"/>
                                                 <constraint firstItem="E3n-tn-ZPa" firstAttribute="centerY" secondItem="IVH-Li-lHr" secondAttribute="centerY" id="Q4H-0Q-eXS"/>
@@ -315,7 +325,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.21677863967939426" green="0.6151112427839156" blue="0.60300692034782089" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.21568627450980393" green="0.61568627450980395" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

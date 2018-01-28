@@ -33,15 +33,6 @@ class AlbumDetailVC: UIViewController {
         loadTracks()
     }
     
-    func loadTracks() {
-        DataService.instance.getAlbumTracks(collectionId: album.collectionId) { (requestedTracks) in
-            self.tracks = requestedTracks
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
     func updateLabels () {
         albumLabel.text = album.collectionName
         artistLabel.text = album.artistName
@@ -51,7 +42,18 @@ class AlbumDetailVC: UIViewController {
         albumImage.image = image
     }
     
+    func loadTracks() {
+        DataService.instance.getAlbumTracks(collectionId: album.collectionId) { (requestedTracks) in
+            self.tracks = requestedTracks
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 }
+
+// MARK: - TableView methods
 
 extension AlbumDetailVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -66,7 +68,6 @@ extension AlbumDetailVC: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    
     
 }
 
